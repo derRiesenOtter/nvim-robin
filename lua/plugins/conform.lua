@@ -5,6 +5,7 @@ return {
 			lua = { "stylua" },
 			python = { "isort", "black" },
 			rust = { "rustfmt", lsp_format = "fallback" },
+			-- r = { "formatR" },
 		},
 		format_on_save = {
 			timeout_ms = 500,

@@ -4,12 +4,19 @@ return {
 	opts = {},
 	keys = {
 		{
-			"<leader>ff",
+			"<leader>fF",
 			mode = "n",
 			function()
 				require("fzf-lua").files()
 			end,
 			desc = "Find Files",
+		},
+		{
+			"<leader>ff",
+			mode = "n",
+			function()
+				require("fzf-lua").git_files()
+			end,
 		},
 		{
 			"<leader>fr",
