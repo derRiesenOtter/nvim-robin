@@ -9,7 +9,7 @@ return {
 			function()
 				require("fzf-lua").files()
 			end,
-			desc = "Find Files",
+			desc = "Find Files cwd",
 		},
 		{
 			"<leader>ff",
@@ -17,6 +17,7 @@ return {
 			function()
 				require("fzf-lua").git_files()
 			end,
+			desc = "Find Files git root",
 		},
 		{
 			"<leader>fr",
@@ -32,7 +33,7 @@ return {
 			function()
 				require("fzf-lua").live_grep()
 			end,
-			desc = "Find Word",
+			desc = "Live grep",
 		},
 	},
 }

@@ -31,17 +31,17 @@ return {
 				local opts = { buffer = ev.buf, silent = true }
 
 				opts.desc = "Show LSP definitions"
-				keymap.set("n", "gd", function()
+				keymap.set("n", "<leader>cd", function()
 					require("fzf-lua").lsp_definitions()
 				end, opts)
 
 				opts.desc = "Show document diagnostics"
-				keymap.set("n", "<leader>D", function()
+				keymap.set("n", "<leader>cD", function()
 					require("fzf-lua").diagnostics_document()
 				end, opts)
 
 				opts.desc = "Show LSP implementations"
-				keymap.set("n", "gi", function()
+				keymap.set("n", "<leader>ci", function()
 					require("fzf-lua").lsp_implementations()
 				end, opts)
 
@@ -51,15 +51,15 @@ return {
 				end, opts)
 
 				opts.desc = "Show LSP references"
-				keymap.set("n", "gr", function()
+				keymap.set("n", "<leader>cr", function()
 					require("fzf-lua").lsp_references()
 				end, opts)
 
 				opts.desc = "Smart rename"
-				keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
+				keymap.set("n", "<leader>cn", vim.lsp.buf.rename, opts)
 
 				opts.desc = "Show line diagnostics"
-				keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
+				keymap.set("n", "<leader>cm", vim.diagnostic.open_float, opts)
 			end,
 		})
 
