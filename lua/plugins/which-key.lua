@@ -5,8 +5,9 @@ return {
     preset = "modern",
     spec = {
       { "<leader>c", group = "Code" },
-      { "<leader>r", group = "Repl" },
+      { "<leader>r", group = "REPL" },
       { "<leader>f", group = "Find" },
+      { "<leader>g", group = "Git" },
     },
   },
 }
