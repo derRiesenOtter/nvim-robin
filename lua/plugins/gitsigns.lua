@@ -49,9 +49,9 @@ return {
 
       map('n', '<leader>gc', gitsigns.diffthis, { desc = "Diff" })
 
-      map('n', '<leader>gC', function()
-        gitsigns.diffthis('~')
-      end, { desc = "Diff" })
+      -- map('n', '<leader>gC', function()
+      --   gitsigns.diffthis('~')
+      -- end, { desc = "Diff" })
 
       -- map('n', '<leader>hQ', function() gitsigns.setqflist('all') end)
       -- map('n', '<leader>hq', gitsigns.setqflist)
