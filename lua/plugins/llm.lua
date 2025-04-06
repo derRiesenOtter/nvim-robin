@@ -62,7 +62,7 @@ return {
           },
           OptimizeCode = {
             handler = tools.side_by_side_handler,
-            prompt = "Optimize the following code, please only return the optimized code",
+            prompt = "Optimize the following code and find errors, please only return the optimized code",
             opts = {
               left = {
                 focusable = false,
@@ -111,14 +111,26 @@ Based on this format, generate appropriate commit messages. Respond with message
                 vim.fn.system("git diff --no-ext-diff --staged")
               )
             end,
-          }
+          },
+          TestCode = {
+            handler = tools.side_by_side_handler,
+            prompt = [[ Write some test cases for the following code, only return the test cases.
+            Give the code content directly, do not use code blocks or other tags to wrap it. ]],
+            opts = {
+              right = {
+                title = " Test Cases ",
+              },
+            },
+          },
         },
       })
     end,
     keys = {
-      { "<leader>ac", mode = "n", "<cmd>LLMSessionToggle<cr>" },
-      { "<leader>ae", mode = "v", "<cmd>LLMAppHandler CodeExplain<cr>" },
-      { "<leader>ag", mode = "n", "<cmd>LLMAppHandler CommitMsg<cr>" },
+      { "<leader>ac", mode = "n", "<cmd>LLMSessionToggle<cr>",           desc = "Chat" },
+      { "<leader>ae", mode = "v", "<cmd>LLMAppHandler CodeExplain<cr>",  desc = "Explain Code" },
+      { "<leader>ao", mode = "v", "<cmd>LLMAppHandler OptimizeCode<cr>", desc = "Optimize Code" },
+      { "<leader>at", mode = "v", "<cmd>LLMAppHandler TestCode<cr>",     desc = "Test Code" },
+      { "<leader>ag", mode = "n", "<cmd>LLMAppHandler CommitMsg<cr>",    desc = "Create Git Commit Message" },
     },
   },
 }

@@ -8,6 +8,7 @@ return {
       { "<leader>r", group = "REPL" },
       { "<leader>f", group = "Find" },
       { "<leader>g", group = "Git" },
+      { "<leader>a", group = "AI" },
     },
   },
 }
