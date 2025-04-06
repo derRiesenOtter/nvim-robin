@@ -45,24 +45,24 @@ return {
 
       map('n', '<leader>gb', function()
         gitsigns.blame_line({ full = true })
-      end)
+      end, { desc = "Blame Line" })
 
-      map('n', '<leader>gc', gitsigns.diffthis)
+      map('n', '<leader>gc', gitsigns.diffthis, { desc = "Diff" })
 
       map('n', '<leader>gC', function()
         gitsigns.diffthis('~')
-      end)
+      end, { desc = "Diff" })
 
       -- map('n', '<leader>hQ', function() gitsigns.setqflist('all') end)
       -- map('n', '<leader>hq', gitsigns.setqflist)
 
       -- Toggles
-      map('n', '<leader>gtb', gitsigns.toggle_current_line_blame)
-      map('n', '<leader>gtd', gitsigns.toggle_deleted)
-      map('n', '<leader>gtc', gitsigns.toggle_word_diff)
+      map('n', '<leader>gtb', gitsigns.toggle_current_line_blame, { desc = "Toggle Current Line Blame" })
+      map('n', '<leader>gtd', gitsigns.toggle_deleted, { desc = "Toggle Deleted" })
+      map('n', '<leader>gtw', gitsigns.toggle_word_diff, { desc = "Toggle Word Diff" })
 
       -- Text object
-      map({ 'o', 'x' }, 'gh', gitsigns.select_hunk)
+      map({ 'o', 'x' }, 'gh', gitsigns.select_hunk, { desc = "Select Hunk" })
     end
   },
 }
