@@ -62,7 +62,8 @@ return {
           },
           OptimizeCode = {
             handler = tools.side_by_side_handler,
-            prompt = "Optimize the following code and find errors, please only return the optimized code",
+            prompt =
+            "Optimize the following code and find errors, please only return the optimized code (not as markdown)",
             opts = {
               left = {
                 focusable = false,

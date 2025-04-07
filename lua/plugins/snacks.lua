@@ -50,7 +50,7 @@ return {
     -- git
     { "<leader>gl", function() Snacks.git.blame_line() end,                              desc = "Blame Line" },
     { "<leader>gg", function() Snacks.lazygit() end,                                     desc = "Lazygit" },
-    { "<leader>gb", function() Snacks.gitbrowse() end,                                   desc = "Gitbrowse" },
+    { "<leader>gw", function() Snacks.gitbrowse() end,                                   desc = "Gitbrowse" },
 
     -- terminal
     { "<leader>t",  function() Snacks.terminal.toggle() end,                             desc = "Terminal" },

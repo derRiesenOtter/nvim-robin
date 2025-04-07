@@ -17,6 +17,7 @@ vim.opt.relativenumber = true
 vim.opt.signcolumn = "number"
 vim.opt.cmdheight = 0
 vim.opt.textwidth = 80
+vim.opt.scrolloff = 5
 
 -- set persistent undos
 vim.opt.undofile = true
