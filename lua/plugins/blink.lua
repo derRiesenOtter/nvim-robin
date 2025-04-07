@@ -8,6 +8,15 @@ return {
     keymap = { preset = "enter" },
 
     sources = {
+      providers = {
+        path = {
+          opts = {
+            get_cwd = function()
+              return vim.fs.root(vim.fn.getcwd(), { ".git" })
+            end,
+          },
+        },
+      },
       default = { "lsp", "path", "snippets", "buffer" },
     },
 

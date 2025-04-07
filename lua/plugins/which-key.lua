@@ -9,6 +9,7 @@ return {
       { "<leader>f", group = "Find" },
       { "<leader>g", group = "Git" },
       { "<leader>a", group = "AI" },
+      { "<leader>h", group = "Harpoon" },
     },
   },
 }
