@@ -26,10 +26,10 @@ return {
       keymaps = {
         toggle_repl = "<localleader>r",
         restart_repl = "<localleader>R",
-        visual_send = "<localleader>s",
+        visual_send = "<Cr>",
         send_file = "<localleader>f",
-        send_line = "<localleader>s",
-        send_paragraph = "<localleader>b",
+        send_line = "<localleader><localleader>",
+        send_paragraph = "<Cr>",
         send_until_cursor = "<localleader>u",
         cr = "<localleader><cr>",
         interrupt = "<localleader><space>",
