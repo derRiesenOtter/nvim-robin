@@ -1,17 +1,16 @@
 return {
-	"nvim-treesitter/nvim-treesitter",
-	opts = {
-		ensure_installed = {
-			"bash",
-			"lua",
-			"python",
-			"r",
-			"rust",
-			"markdown",
-			"markdown_inline",
-			"bibtex",
-			"latex",
-			"make",
-		},
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		config = function()
+			local configs = require("nvim-treesitter.configs")
+
+			configs.setup({
+				ensure_installed = { "lua", "python", "r", "rust", "typst" },
+				sync_install = false,
+				highlight = { enable = true },
+				indent = { enable = true },
+			})
+		end,
 	},
 }

@@ -12,6 +12,7 @@ return {
 				"r_language_server",
 				"marksman",
 				"rust_analyzer",
+				"tinymist",
 			},
 		},
 	},
@@ -23,6 +24,7 @@ return {
 			require("lspconfig").r_language_server.setup({})
 			require("lspconfig").marksman.setup({})
 			require("lspconfig").rust_analyzer.setup({})
+			require("lspconfig").tinymist.setup({})
 		end,
 	},
 }

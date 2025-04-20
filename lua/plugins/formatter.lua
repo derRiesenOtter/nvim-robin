@@ -11,6 +11,7 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				r = { "air" },
+				typst = { "prettypst" },
 			},
 			format_on_save = {
 				timeout_ms = 500,

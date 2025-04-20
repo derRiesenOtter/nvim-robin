@@ -82,40 +82,26 @@ return {
 			desc = "Buffer Diagnostics",
 		},
 		{
-			"<leader>cd",
+			"gld",
 			function()
 				Snacks.picker.lsp_definitions()
 			end,
 			desc = "Goto Definition",
 		},
 		{
-			"<leader>cD",
-			function()
-				Snacks.picker.lsp_declarations()
-			end,
-			desc = "Goto Declaration",
-		},
-		{
-			"<leader>cr",
+			"glr",
 			function()
 				Snacks.picker.lsp_references()
 			end,
 			nowait = true,
-			desc = "References",
+			desc = "Goto References",
 		},
 		{
-			"<leader>cI",
+			"gli",
 			function()
 				Snacks.picker.lsp_implementations()
 			end,
 			desc = "Goto Implementation",
-		},
-		{
-			"<leader>cy",
-			function()
-				Snacks.picker.lsp_type_definitions()
-			end,
-			desc = "Goto T[y]pe Definition",
 		},
 
 		-- explorer
