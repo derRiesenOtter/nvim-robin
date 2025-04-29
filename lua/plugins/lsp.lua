@@ -23,7 +23,7 @@ return {
 			require("lspconfig").pyright.setup({})
 			require("lspconfig").r_language_server.setup({})
 			require("lspconfig").marksman.setup({})
-			require("lspconfig").rust_analyzer.setup({})
+			-- require("lspconfig").rust_analyzer.setup({})
 			require("lspconfig").tinymist.setup({})
 		end,
 	},

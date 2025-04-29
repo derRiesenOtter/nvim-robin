@@ -20,7 +20,7 @@ return {
 		lazygit = { enabled = true },
 		gitbrowse = { enabled = true },
 		indent = { enabled = true },
-		image = { enabled = true },
+		-- image = { enabled = true },
 		picker = { enabled = true },
 		notifier = { enabled = true },
 		statuscolumn = { enabled = true },
@@ -75,7 +75,7 @@ return {
 		},
 		--- lsp
 		{
-			"<leader>fd",
+			"glD",
 			function()
 				Snacks.picker.diagnostics_buffer()
 			end,

@@ -11,7 +11,9 @@ return {
 			{ "<leader>g", group = "Git" },
 			{ "<leader>a", group = "AI" },
 			{ "<leader>h", group = "Harpoon" },
+			{ "<leader>d", group = "Debug" },
 			{ "gl", group = "LSP" },
+			{ "s", group = "Surround" },
 			-- hidden
 			{ "gt", hidden = true },
 			{ "gT", hidden = true },

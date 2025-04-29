@@ -1,4 +1,7 @@
-return {
-  "echasnovski/mini.pairs",
-  opts = {},
-}
+return { {
+	"echasnovski/mini.pairs",
+	opts = {},
+}, {
+	"echasnovski/mini.surround",
+	opts = {},
+} }
