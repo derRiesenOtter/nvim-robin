@@ -9,6 +9,18 @@ return {
 		dependencies = {
 			"mfussenegger/nvim-dap",
 		},
+		config = function()
+			-- Set up buffer-local keymaps when a Rust file is loaded
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = "rust",
+				callback = function()
+					vim.keymap.set("n", "glR", "<cmd>RustLsp runnables<cr>", { desc = "Runnables" })
+					vim.keymap.set("n", "gla", "<cmd>RustLsp codeAction<cr>", { desc = "Code Actions" })
+					vim.keymap.set("n", "gll", "<cmd>RustLsp renderDiagnostic<cr>", { desc = "Show Line Diagnostic" })
+					vim.keymap.set("n", "gle", "<cmd>RustLsp explainError<cr>", { desc = "Error Explanation" })
+				end,
+			})
+		end,
 	},
 	{
 		"mfussenegger/nvim-dap-python",
@@ -27,30 +39,28 @@ return {
 		lazy = true,
 		dependencies = {
 			{ "theHamsta/nvim-dap-virtual-text", opts = {} },
-			"rcarriga/nvim-dap-ui",
 			"nvim-neotest/nvim-nio",
 		},
 		config = function()
-			local dap, dapui = require("dap"), require("dapui")
-			dapui.setup()
+			local dap = require("dap")
+			dap.defaults.fallback.terminal_win_cmd = "belowright 5split new"
 
 			vim.keymap.set("n", "<leader>dt", dap.toggle_breakpoint, { desc = "Toggle Breakpoint" })
 			vim.keymap.set("n", "<leader>dc", dap.continue, { desc = "Continue" })
 			vim.keymap.set("n", "<leader>ds", dap.terminate, { desc = "Terminate" })
-
-			vim.keymap.set("n", "<leader>du", dapui.toggle, { desc = "Terminate" })
-			dap.listeners.before.attach.dapui_config = function()
-				dapui.open()
-			end
-			dap.listeners.before.launch.dapui_config = function()
-				dapui.open()
-			end
-			dap.listeners.before.event_terminated.dapui_config = function()
-				dapui.close()
-			end
-			dap.listeners.before.event_exited.dapui_config = function()
-				dapui.close()
-			end
+			vim.keymap.set("n", "<leader>dn", dap.step_over, { desc = "Step Over" })
+			vim.keymap.set("n", "<leader>di", dap.step_into, { desc = "Step Into" })
+			vim.keymap.set("n", "<leader>do", dap.step_out, { desc = "Step Out" })
+			vim.keymap.set("n", "<leader>dd", dap.clear_breakpoints, { desc = "Clear breakpoints" })
+			vim.keymap.set("n", "<leader>dh", function()
+				require("dap.ui.widgets").hover()
+			end, { desc = "Hover" })
+			vim.keymap.set("n", "<leader>dp", function()
+				require("dap.ui.widgets").preview()
+			end, { desc = "Preview" })
+			vim.keymap.set("n", "<leader>dr", function()
+				require("dap.repl").toggle({ height = 10 })
+			end, { desc = "Toggle REPL" })
 		end,
 	},
 	{
