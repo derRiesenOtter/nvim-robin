@@ -24,9 +24,9 @@ return {
 	},
 	{
 		"mfussenegger/nvim-dap-python",
-		lazy = true,
+		ft = "python",
 		config = function()
-			local python = vim.fn.expand("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
+			local python = vim.fn.expand("~/.local/share/nvim-robin/mason/packages/debugpy/venv/bin/python")
 			require("dap-python").setup(python)
 		end,
 		dependencies = {
@@ -43,7 +43,7 @@ return {
 		},
 		config = function()
 			local dap = require("dap")
-			dap.defaults.fallback.terminal_win_cmd = "belowright 5split new"
+			dap.defaults.fallback.terminal_win_cmd = "belowright 10split new"
 
 			vim.keymap.set("n", "<leader>dt", dap.toggle_breakpoint, { desc = "Toggle Breakpoint" })
 			vim.keymap.set("n", "<leader>dc", dap.continue, { desc = "Continue" })
