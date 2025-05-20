@@ -22,3 +22,6 @@ vim.opt.scrolloff = 5
 -- set persistent undos
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand("$HOME") .. "/.vim_undo"
+
+-- set venv for python especially molten
+vim.g.python3_host_prog = vim.fn.expand("~/.virtualenvs/neovim/bin/python3")
