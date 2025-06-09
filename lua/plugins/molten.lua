@@ -11,28 +11,28 @@ return {
 		config = function()
 			vim.keymap.set(
 				"n",
-				"<localleader>e",
+				"<localleader>m",
 				":MoltenEvaluateOperator<CR>",
 				{ silent = true, desc = "run operator selection" }
 			)
 			vim.keymap.set("n", "<localleader>l", ":MoltenEvaluateLine<CR>", { silent = true, desc = "evaluate line" })
 			vim.keymap.set(
 				"n",
-				"<localleader>rr",
+				"<localleader>r",
 				":MoltenReevaluateCell<CR>",
 				{ silent = true, desc = "re-evaluate cell" }
 			)
 			vim.keymap.set(
 				"v",
-				"<localleader>r",
-				":<C-u>MoltenEvaluateVisual<CR>r",
+				"<localleader>s",
+				":<C-u>MoltenEvaluateVisual<CR>l",
 				{ silent = true, desc = "evaluate visual selection" }
 			)
 			vim.keymap.set("n", "<localleader>x", ":MoltenDelete<CR>", { silent = true, desc = "molten delete cell" })
 			vim.keymap.set("n", "<localleader>h", ":MoltenHideOutput<CR>", { silent = true, desc = "hide output" })
 			vim.keymap.set(
 				"n",
-				"<localleader>t",
+				"<localleader>w",
 				":noautocmd MoltenEnterOutput<CR>",
 				{ silent = true, desc = "show/enter output" }
 			)
@@ -49,16 +49,24 @@ return {
 		end,
 	},
 	{
-		-- see the image.nvim readme for more information about configuring this plugin
 		"3rd/image.nvim",
 		build = false,
 		opts = {
-			backend = "kitty", -- whatever backend you would like to use
+			backend = "kitty",
+			integrations = {
+				typst = {
+					enabled = true,
+					filetypes = { "typst" },
+					floating_windows = true,
+					only_render_image_at_cursor_mode = "popup",
+					only_render_image_at_cursor = true,
+				},
+			},
 			max_width = 100,
 			max_height = 12,
 			max_height_window_percentage = math.huge,
 			max_width_window_percentage = math.huge,
-			window_overlap_clear_enabled = true, -- toggles images when windows are overlapped
+			window_overlap_clear_enabled = true,
 			window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
 		},
 	},
