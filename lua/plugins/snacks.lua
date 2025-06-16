@@ -9,9 +9,8 @@ return {
 			enabled = true,
 			sections = {
 				{ section = "header" },
-				{ icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
-				{ icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
-				{ icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+				{ section = "keys", indent = 2, padding = 2, gap = 1 },
+				{ icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 2 },
 				{ section = "startup" },
 			},
 		},
@@ -20,8 +19,8 @@ return {
 		lazygit = { enabled = true },
 		gitbrowse = { enabled = true },
 		indent = { enabled = true },
-		-- image = { enabled = true },
-		picker = { enabled = true },
+		image = { enabled = false },
+		picker = { enabled = true, win = { input = { keys = { ["<Esc>"] = { "close", mode = { "n", "i" } } } } } },
 		notifier = { enabled = true },
 		statuscolumn = { enabled = true },
 		terminal = { enabled = true },
@@ -75,21 +74,28 @@ return {
 		},
 		--- lsp
 		{
-			"glD",
+			"<leader>fd",
 			function()
 				Snacks.picker.diagnostics_buffer()
 			end,
 			desc = "Buffer Diagnostics",
 		},
 		{
-			"gld",
+			"gd",
 			function()
 				Snacks.picker.lsp_definitions()
 			end,
 			desc = "Goto Definition",
 		},
 		{
-			"glr",
+			"gD",
+			function()
+				Snacks.picker.lsp_declarations()
+			end,
+			desc = "Goto Declaration",
+		},
+		{
+			"gr",
 			function()
 				Snacks.picker.lsp_references()
 			end,
@@ -97,7 +103,7 @@ return {
 			desc = "Goto References",
 		},
 		{
-			"gli",
+			"gi",
 			function()
 				Snacks.picker.lsp_implementations()
 			end,
@@ -134,15 +140,6 @@ return {
 				Snacks.gitbrowse()
 			end,
 			desc = "Gitbrowse",
-		},
-
-		-- terminal
-		{
-			"<leader>t",
-			function()
-				Snacks.terminal.toggle()
-			end,
-			desc = "Terminal",
 		},
 	},
 }

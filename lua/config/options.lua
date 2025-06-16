@@ -1,6 +1,5 @@
 -- set leader keys
 vim.g.mapleader = " "
-vim.g.maplocalleader = ","
 
 -- set 2 spaces as tab
 vim.opt.tabstop = 2
@@ -25,3 +24,13 @@ vim.opt.undodir = vim.fn.expand("$HOME") .. "/.vim_undo"
 
 -- set venv for python especially molten
 vim.g.python3_host_prog = vim.fn.expand("~/.virtualenvs/neovim/bin/python3")
+vim.diagnostic.config({
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "✘",
+			[vim.diagnostic.severity.WARN] = "⚠",
+			[vim.diagnostic.severity.INFO] = "ℹ",
+			[vim.diagnostic.severity.HINT] = "💡",
+		},
+	},
+})
