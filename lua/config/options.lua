@@ -15,7 +15,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "number"
 vim.opt.cmdheight = 0
-vim.opt.textwidth = 80
+-- vim.opt.textwidth = 80
 vim.opt.scrolloff = 5
 
 -- set persistent undos
@@ -27,10 +27,10 @@ vim.g.python3_host_prog = vim.fn.expand("~/.virtualenvs/neovim/bin/python3")
 vim.diagnostic.config({
 	signs = {
 		text = {
-			[vim.diagnostic.severity.ERROR] = "✘",
-			[vim.diagnostic.severity.WARN] = "⚠",
-			[vim.diagnostic.severity.INFO] = "ℹ",
-			[vim.diagnostic.severity.HINT] = "💡",
+			[vim.diagnostic.severity.ERROR] = "●",
+			[vim.diagnostic.severity.WARN] = "▲",
+			[vim.diagnostic.severity.INFO] = "■",
+			[vim.diagnostic.severity.HINT] = "○",
 		},
 	},
 })
